@@ -1,0 +1,23 @@
+<!-- <header>
+    <img src="././assets/logoMVControl.svg">
+    <div id="links">
+        <a>Home</a>
+        <a>Minhas VM's</a>
+        <a>Olá, {{userName}}</a>
+    </div> 
+</header> -->
+
+<header>
+    <div>
+        <a>
+          <img src="././assets/logoVMControl.svg">  
+        </a>
+        <div id="links">
+            <a [routerLink]="['/home']">Home</a>
+            <a [routerLink]="['/visualizarVM']">Minhas VM's</a>
+            <a [routerLink]="['/cadastrarVM']">Criar VM</a>
+            <p>Olá, {{userName}}</p>
+        </div> 
+    </div>
+    <hr>
+</header>
