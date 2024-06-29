@@ -1,2 +1,40 @@
-<app-header></app-header>
-<p>dashboard works!</p>
+<main>
+    <header>
+        <app-header></app-header>
+    </header>
+    <body>
+        <section id="vm-key-info">
+            <div id="welcome">
+                <h1>Olá, {{userName}}</h1>
+                <p>Atualmente você possui:</p>
+                <h1 id="num-vm">0 VM's</h1>
+            </div>
+            <div id="field-pie-chart">
+                <canvas id="piechart"></canvas>
+                <!--GRÁFICO DE PIZZA-->
+                <div>
+                    <h1>0%</h1>
+                    <p>Você já atingiu 0% da sua capacidade!</p>
+                </div>
+            </div>
+            <div id="field-bar-chart">
+                <h2>Status das VM's</h2>
+                <canvas id="barchart"></canvas>
+                <!--GRAFÍCO DE BARRAS-->
+            </div>
+        </section>
+        <section id="platform-info">
+            <div>
+                <img>
+                <div>
+                    <h2>Bem-vindo de volta a MVControl</h2>
+                    <h4>Sua plataforma de  gestão e monitoramento de Maquinas Virtuais.</h4>
+                </div>
+            </div>
+            <p>
+                Aqui você pode acompanhar. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce ullamcorper sapien at arcu aliquet, eu volutpat mauris gravida. Duis vulputate sem risus, eu dictum erat ultrices sed. Sed luctus accumsan suscipit. Nam suscipit nec enim eu suscipit. 
+            </p>
+        </section>
+    </body>
+</main>
+
