@@ -1,0 +1,39 @@
+<main>
+    <body>
+        <h1>Minhas VM's</h1>
+        <button>Criar Nova VM</button>
+        <section>
+            <table id="listing-vm">
+                <thead>
+                    <tr>
+                    <td class="title-table">NOME</td>
+                    <td class="title-table">CPU</td>
+                    <td class="title-table">MEMÓRIA (RAM)</td>
+                    <td class="title-table">STATUS</td>
+                    <td class="title-table">AÇÕES</td>
+                </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let vm of vms; let i = index">
+                        <!-- { displayName: "vm1", cpu: 2, memory: 1024, status: "RUNNING", actions: [{ name: 'Iniciar' }, { name: 'Pausar' }, { name: 'Parar' }, { name: 'Excluir' }] }, -->
+
+                        <td>{{ vm.displayName }}</td>
+                        <td>{{ vm.cpu }}</td>
+                        <td>{{ vm.memory }}</td>
+                        <td id="vmStatus{{i}}">{{ vm.status }}</td>
+                        <td>
+                            <!-- <button *ngFor="let action of vm.actions">
+                                {{ action.name }}
+                            </button>
+                            <button (click)="excluirVM(i)">Excluir</button> -->
+                            <button (click)="actionClick(i, 'Iniciar')">Iniciar</button>
+                            <button (click)="actionClick(i, 'Pausar')">Pausar</button>
+                            <button (click)="actionClick(i, 'Parar')">Parar</button>
+                            <button (click)="actionClick(i, 'Excluir')">Excluir</button>
+                        </td>
+                    </tr>    
+                </tbody>
+            </table>
+        </section>
+    </body>
+</main>
