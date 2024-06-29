@@ -1,11 +1,13 @@
 header{
-    background-color: #FFFFFF;
+    background-color: #ffffff;
     display: flex;
     flex-direction: column;
-    position: fixed;
+    // position: fixed;
     width: 100%;
+    margin-top: 0;
+    height: 6.75rem;
 
-    div{
+    #logo-menu{
         display: flex;
         flex-direction: row;
         align-items: center;
@@ -20,18 +22,27 @@ header{
         a{
             cursor: pointer;
         }
+    }
 
-        #links{
-            display: flex;
-            gap: 2rem;
+    #links{
+        background-color: #000000;
+        color: #ffffff;
+        display: flex;
+        justify-content: flex-end;
+        align-items: end;
+        gap: 2rem;
+        padding: 0.75rem 1.5rem;
 
-            
+        a{
+            color: #ffffff;
+            text-decoration: none;
         }
     }
-    hr{
-        height: 0.25rem;
-        width: 100%;
-        background: linear-gradient(to right, #0E46C9 ,#00BBFF);
-        border:none;
-    }
+
+    // hr{
+    //     height: 0.25rem;
+    //     width: 100%;
+    //     background: linear-gradient(to right, #0E46C9 ,#00BBFF);
+    //     border:none;
+    // }
 }

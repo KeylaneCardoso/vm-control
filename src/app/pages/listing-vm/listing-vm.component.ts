@@ -1,10 +1,11 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
+import { HeaderComponent } from '../../components/header/header.component';
 
 @Component({
   selector: 'app-listing-vm',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, HeaderComponent],
   templateUrl: './listing-vm.component.html',
   styleUrl: './listing-vm.component.scss'
 })
