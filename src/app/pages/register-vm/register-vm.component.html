@@ -1,6 +1,49 @@
 <main>
+    <app-header></app-header>
     <body>
-        <app-header></app-header>
-        
+        <section>
+            <h2>Cadastre uma nova VM</h2>
+            <form>
+                <fieldset>
+                    <label>Nome</label>
+                    <input class="input-login" type="e-mail" name="" placeholder="E-mail">
+                </fieldset>
+                <fieldset>
+                    <label for="cpu-select">CPU</label>
+                    <select id="cpu-select" required>
+                        <option selected disabled value="">Selecione</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                    </select>
+                </fieldset>
+                <fieldset>
+                    <label id="memoria" for="memoria-select">Memória (RAM)</label>
+                    <select id="memoria-select" required>
+                        <option selected disabled value="">Selecione</option>
+                        <option value="512">512</option>
+                        <option value="1024">1024</option>
+                        <option value="2048">2048</option>
+                    </select>
+                </fieldset>
+                <fieldset id="buttons-form-register">
+                    <button
+                        id="button-cancel"
+                        type="submit"
+                        onreset="">Cancelar
+                    </button>
+                    <button
+                        id="button-register" 
+                        type="submit"
+                        onsubmit="">Cadastrar
+                    </button> 
+                </fieldset>
+                
+            </form>
+
+        </section>
     </body>
 </main>
