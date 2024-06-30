@@ -6,31 +6,49 @@
             <div id="welcome">
                 <h1>Olá, {{userName}}</h1>
                 <p>Atualmente você possui:</p>
-                <h1 id="num-vm">0 VM's</h1>
-            </div>
-            <div id="field-pie-chart">
-                <canvas id="piechart"></canvas>
-                <div>
-                    <h1>0%</h1>
-                    <p>Você já atingiu 0% da sua capacidade!</p>
-                </div>
+                <h1 id="num-vm">{{numVM}} VM's</h1>
             </div>
             <div id="field-bar-chart">
                 <h2>Status das VM's</h2>
                 <canvas id="barchart"></canvas>
             </div>
+            <div id="field-pie-chart">
+                <div id="canva-pie">
+                    <canvas id="piechart"></canvas>
+                </div>
+                <div>
+                    <h1>{{VMPercent}}%</h1>
+                    <p>Você já atingiu {{VMPercent}}% da sua capacidade!</p>
+                </div>
+            </div>
         </section>
         <section id="platform-info">
-            <div>
+            <div id="info-principal">
                 <img>
                 <div>
-                    <h2>Bem-vindo de volta a MVControl</h2>
+                    <h2>Bem-vindo de volta</h2>
+                    <img src="././assets/logoMVControlBranca.svg">
+                    <hr>
                     <h4>Sua plataforma de  gestão e monitoramento de Maquinas Virtuais.</h4>
                 </div>
             </div>
-            <p>
-                Aqui você pode acompanhar. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce ullamcorper sapien at arcu aliquet, eu volutpat mauris gravida. Duis vulputate sem risus, eu dictum erat ultrices sed. Sed luctus accumsan suscipit. Nam suscipit nec enim eu suscipit. 
-            </p>
+            <div id="info-secundaria">
+                <app-info-dashboard 
+                    img="integracao.png" 
+                    title="Centralização" 
+                    text="Uma plataforma de gestão unifica a administração de todas as VMs em um único local, facilitando o controle e a coordenação das operações.">
+                </app-info-dashboard>
+                <app-info-dashboard 
+                    img="monitoramento.png" 
+                    title="Monitoramento Contínuo" 
+                    text="Monitora o uso de recursos como CPU, memória e armazenamento, ajudando a alocar recursos de maneira eficiente e evitar desperdícios.">
+                </app-info-dashboard>
+                <app-info-dashboard 
+                    img="gestao.png" 
+                    title="Escalabilidade" 
+                    text="Facilita a adição ou remoção de VMs conforme necessário, suportando o crescimento ou a redução de forma rápida e eficiente.">
+                </app-info-dashboard>
+            </div>
         </section>
     </body>
 </main>

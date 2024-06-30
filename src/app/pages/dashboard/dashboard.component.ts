@@ -3,16 +3,19 @@ import { RouterOutlet } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { HeaderComponent } from '../../components/header/header.component';
 import { Chart, registerables } from 'chart.js';
+import { InfoDashboardComponent } from '../../components/info-dashboard/info-dashboard.component';
 
 @Component({
   selector: 'app-dashboard',
   standalone: true,
-  imports: [CommonModule, RouterOutlet, HeaderComponent],
+  imports: [CommonModule, RouterOutlet, HeaderComponent, InfoDashboardComponent],
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.scss'
 })
 export class DashboardComponent implements OnInit {
   userName = "Keylane";
+  numVM = "3";
+  VMPercent = "24";
 
   ngOnInit(){
     Chart.register(...registerables);
@@ -61,14 +64,6 @@ export class DashboardComponent implements OnInit {
       options: {
         indexAxis: 'y',
         scales: {
-          // yAxes: {
-          //   ticks: {
-          //     display: false
-          //   }
-          //   // gridLines: {
-          //     // display: false // Definir como false para ocultar as linhas
-          //   // }
-          // }
         }
       },  
     })

@@ -10,7 +10,7 @@ body{
     flex-direction:row;
     justify-content: space-between;
     flex-wrap: wrap;
-    gap: 3rem;
+    gap: 5rem;
     margin: 2rem 10rem;
     align-items: center;
     /* colocar os margins */
@@ -48,20 +48,27 @@ body{
         display: flex;
         flex-direction: row;
         align-items: center;
-        width: 16rem;
-
+        width: 25rem;
         div{
-            width: 10rem;
-
+            width: 40%;
             h1{
                 color: #00BBFF;
                 font-size: 28px;
             }
         }
+        #canva-pie{
+            width: 60%;
+            canvas{
+                display:none;
+                width: none;
+            }
 
-        #piechart{
-            width: 0.01rem;
         }
+
+        // canvas{
+        //     display:none;
+        //     width: none;
+        // }
     }
 
     #field-bar-chart{
@@ -81,12 +88,13 @@ body{
 #platform-info{
     margin-top: 2rem;
     background: linear-gradient(to right, #0E46C9, #072263);
-    padding: 1rem 10rem 2rem 10rem;
+    padding: 5rem 10rem 2rem 10rem;
     display: flex;
-    flex-direction: column;
-    gap: 2rem;
+    justify-content: space-between;
+    align-items: center;
+    gap: 5rem;
     color: #ffffff;
-    height: 50vh;
+    flex-wrap: wrap;
 
     h2{
         font-size: 22px;
@@ -95,19 +103,71 @@ body{
         font-size: 16px;
         font-style: italic;
         font-weight: 400;
+        color: #FFC482;
     }
 
-    p{
-        font-size: 14px;
+    #info-principal{
+        width: 18rem;
+        img{
+            width: 14rem;
+        }
+        hr{
+            margin: 0.5rem 0 1rem 0;
+            height: 0.25rem;
+            border:none;
+            border-radius: 10px;
+            background: linear-gradient(to right, #FF8A08, #FFB908);
+        }
+    }
+    #info-secundaria{
+        width: 35rem;
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        margin-top: 3rem;
     }
 
 }
 
-@media screen and (max-width: 1920px) and (min-width: 1280px){
-
-
+@media screen and (max-width: 1380px){
+    #vm-key-info{
+        margin: 2rem 8rem;
+    }
+    #platform-info{
+        padding: 1rem 8rem 2rem 8rem;
+    }
 }
-@media screen and (max-width: 1280px) and (min-width: 768px){
+@media screen and (max-width: 1280px){
+    #platform-info{
+        flex-direction: column;
+        align-items:flex-start;
+        gap: 5rem;    
     
+        #info-principal{
+            width: 100%;
+        }
+        #info-secundaria{
+            width: 100%;
+            margin-top: 0;
+        }
+    }
+}
 
+@media screen and (max-width: 920px){
+    #vm-key-info{
+        margin: 2rem 5rem;
+    }
+    #platform-info{
+        padding: 1rem 5rem 2rem 5rem;
+    }
+}
+
+
+@media screen and (max-width: 768px){
+    #vm-key-info{
+        margin: 2rem 4rem;
+    }
+    #platform-info{
+        padding: 1rem 4rem 2rem 4rem;
+    }
 }
