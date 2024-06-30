@@ -1,27 +1,42 @@
 # VmControl
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.8.
+## Descrição do Projeto
 
-## Development server
+O VMControl é uma plataforma web de  gestão e monitoramento de Maquinas Virtuais. Os principais objetivos da plataforma são:
+- **Centralização:** Unificar a administração de todas as VMs em um único local, facilitando o controle e a coordenação das operações.
+- **Monitoramento Contínuo:** Facilita no alocamento de recursos de maneira eficiente e evitar desperdícios.
+- **Escalabilidade:** Facilita a adição ou remoção de VMs conforme necessário, suportando o crescimento ou a redução de forma rápida e eficiente.
+Desse modo a plataforma consegue simplificar, para o usuário final, a administração de suas máquinas virtuais.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
-## Code scaffolding
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Tecnologias Utilizadas
 
-## Build
+O projeto foi desenvolvido com o Angular 17, sendo gerado com o Angular CLI na versão 17.3.8.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+- HTML
+- SCSS
+- Angular
+- Typescript
 
-## Running unit tests
+- **Biblioteca para gráficos:** Chart.js
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-## Running end-to-end tests
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+## Intalação e Uso
 
-## Further help
+Para executar o projeto localmente, siga as etapas:
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+1. Clone o repositório: `https://github.com/KeylaneCardoso/vm-control.git`
+2. Execute o servidor: `ng server`
+3. Acesse a plataforma no seu navegador: `http://localhost:4200/`.
+
+
+
+## Desafios e Descobertas
+
+Este foi o primeiro projeto que desenvolvi em Angular. Anteriormente, tive contato apenas com o React.js. Foi um desafio realmente desafiador que me tirou da minha zona de conforto e me fez desenvolver muitas habilidades, tanto as hard skills, que foram aprender a usar o framework, quanto as soft skills, onde foi preciso gerir bem o tempo para conseguir entregar o projeto com a melhor qualidade possível dentro do prazo proposto.
+
+Esse projeto foi iniciado em outro repositório, porém, quando o criei, coloquei a tag `--no-standalone`, o que acabou gerando uma série de complicações com os módulos dos componentes, dificultando o processo de importação dos componentes. Por isso, decidi que seria mais viável criar outro repositório, desta vez com componentes standalone.
+
+Apesar de ser um framework robusto, o Angular me chamou muito a atenção pela maneira como o projeto fica completo e organizado, facilitando a estruturação do projeto.Por conta de sua robustez, a curva de aprendizado acabou sendo mais demorada do que a do React, mas acredito que tudo pode ser aprendido, basta dedicação. Pretendo estudar mais sobre o Angular para melhorar cada vez mais meu trabalho e superar as dificuldades que tive no desenvolvimento dessa plataforma.
