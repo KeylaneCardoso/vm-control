@@ -1,0 +1,30 @@
+#infos{
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+
+    img{
+        width: 5rem;
+    }
+    img:hover{
+        transition: 0.5s;
+        width: 5.5rem;
+    }
+
+    div{
+        display: flex;
+        flex-direction: column;
+        gap: 0.15rem;
+
+        p{
+            font-size: 14px;
+        }
+
+        h3{
+            color: #E8CCB3;
+            text-transform: uppercase;
+            font-weight: 700;
+            font-size: 17px;
+        }
+    }
+}
