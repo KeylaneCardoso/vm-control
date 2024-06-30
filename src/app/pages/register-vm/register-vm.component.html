@@ -6,14 +6,22 @@
                 <img src="././assets/volte.png">
             </button>
             <h2>Cadastre uma nova VM</h2>
-            <form>
+            <form (ngSubmit)="submit()" [formGroup]="registerForm" #formDir="ngForm">
                 <fieldset>
                     <label>Nome</label>
-                    <input class="input-login" type="e-mail" name="" placeholder="E-mail">
+                    <input class="input-login"
+                        type="text"
+                        name=""
+                        placeholder="mv"
+                        formControlName="campoDisplayName"
+                        [(ngModel)]="vmData.displayName">
                 </fieldset>
                 <fieldset>
                     <label for="cpu-select">CPU</label>
-                    <select id="cpu-select" required>
+                    <select id="cpu-select" 
+                        required
+                        formControlName="campoCpu"
+                        [(ngModel)]="vmData.cpu">
                         <option selected disabled value="">Selecione</option>
                         <option value="1">1</option>
                         <option value="2">2</option>
@@ -25,7 +33,10 @@
                 </fieldset>
                 <fieldset>
                     <label id="memoria" for="memoria-select">Memória (RAM)</label>
-                    <select id="memoria-select" required>
+                    <select id="memoria-select"
+                        required
+                        formControlName="campoMemory"
+                        [(ngModel)]="vmData.memory">
                         <option selected disabled value="">Selecione</option>
                         <option value="512">512</option>
                         <option value="1024">1024</option>
