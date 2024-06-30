@@ -1,12 +1,15 @@
 <header>
     <div id="logo-menu">
-        <a>
+        <a [routerLink]="['/home']">
           <img src="././assets/logoVMControl.svg">  
         </a>
+        <button>
+            <img src="././assets/menu.png">
+        </button>
     </div>
     <hr>
     <div id="links">
-        <a [routerLink]="['/home']">Home</a>
+        <a id="teste" [routerLink]="['/home']">Home</a>
         <a [routerLink]="['/visualizarVM']">Minhas VM's</a>
         <a [routerLink]="['/cadastrarVM']">Criar VM</a>
         <p>Olá, {{userName}}</p>

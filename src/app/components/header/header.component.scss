@@ -23,6 +23,17 @@ header{
         a{
             cursor: pointer;
         }
+
+        button{
+            display: none;
+            background: none;
+            border: none;
+
+            img{
+                display: none;
+                width: 1.5rem;
+            }
+        }
     }
 
     #links{
@@ -34,9 +45,42 @@ header{
         gap: 2rem;
         padding: 0.75rem 1.5rem;
 
-        a{
+        a, p{
             color: #ffffff;
             text-decoration: none;
+            position: relative;
+            display: inline-block;
+            cursor: pointer;
+        }
+        
+        a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 3px;
+            display: block;
+            background: #FF8A08;
+            transition: width 0.3s ease-in-out;
+            bottom: -1px;
+            left: 0;
+        }
+        p::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 3px;
+            display: block;
+            background: #FF8A08;
+            transition: width 0.3s ease-in-out;
+            bottom: -1px;
+            left: 0;
+        }
+        
+        a:hover::after {
+            width: 100%;
+        }
+        p:hover::after {
+            width: 100%;
         }
     }
 
@@ -45,5 +89,19 @@ header{
         width: 100%;
         background: linear-gradient(to right, #0E46C9 , #FF8A08);
         border:none;
+    }
+}
+
+@media screen and (max-width: 1920px) and (min-width: 1280px){
+
+}
+@media screen and (max-width: 1280px) and (min-width: 768px){
+    #logo-menu{
+        button{
+            display: flex;
+            img{
+                display: flex;
+            }
+        }
     }
 }
