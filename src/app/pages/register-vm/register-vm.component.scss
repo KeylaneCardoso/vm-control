@@ -14,10 +14,24 @@ div{
 body{
     padding-top: 8rem;
     background: linear-gradient(to bottom, #FF8A08, #ECFAFF);
-    height: 100vh;
+    height: 82vh;
     display: flex;
     justify-content: center;
     align-items: center;
+    button{
+        background: none;
+        border: none;
+
+        img{
+            width: 2rem;
+            cursor:pointer;
+        }
+        img:hover{
+            width: 2.5rem;
+            transition: 0.5s;       
+        }
+    }
+    
 
     h2{
         color:#0E46C9;
@@ -76,8 +90,17 @@ body{
             #button-register{
                 background-color: #10CE00;
             }
+            #button-register:hover{
+                background-color: #0b8300;
+                transition: 0.5s;
+            }
             #button-cancel{
-                background-color: #CE0000;
+                background-color: #da0000;
+            }
+            #button-cancel:hover{
+                background-color: #9c0101;
+                transition: 0.5s;
+
             }
         }
     }

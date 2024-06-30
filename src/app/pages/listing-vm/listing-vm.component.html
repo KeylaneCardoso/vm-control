@@ -1,10 +1,14 @@
 <main>
     <app-header></app-header>
     <body>
-        
-        <h1>Minhas VM's</h1>
-        <button>Criar Nova VM</button>
-        <section>
+        <div id="title-button">
+            <div>
+                <h1>Minhas VM's</h1>
+                <hr>
+            </div>
+            <button [routerLink]="['/cadastrarVM']">Criar Nova VM</button>
+        </div>
+        <section id="lista-vm">
             <table id="listing-vm">
                 <thead>
                     <tr>
@@ -17,13 +21,11 @@
                 </thead>
                 <tbody>
                     <tr *ngFor="let vm of vms; let i = index">
-                        <!-- { displayName: "vm1", cpu: 2, memory: 1024, status: "RUNNING", actions: [{ name: 'Iniciar' }, { name: 'Pausar' }, { name: 'Parar' }, { name: 'Excluir' }] }, -->
-
                         <td>{{ vm.displayName }}</td>
                         <td>{{ vm.cpu }}</td>
                         <td>{{ vm.memory }}</td>
                         <td id="vmStatus{{i}}">{{ vm.status }}</td>
-                        <td>
+                        <td id="buttons-action">
                             <!-- <button *ngFor="let action of vm.actions">
                                 {{ action.name }}
                             </button>

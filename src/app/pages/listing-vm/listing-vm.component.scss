@@ -1,51 +1,93 @@
 body{
     background-color: #FFFAEE;
+    // padding: 8rem 10rem 0 10rem;
     padding-top: 8rem;
     height: 100vh;
 
-    button{
-        padding: 0.75rem 2rem;
-        border-radius: 30px;
-        border: none;
-        font-size: 16px;
-        color: #FFFFFF;
-        background-color: #00BBFF;
+    #title-button{
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+
+        hr{
+            background: linear-gradient(to right, #FF8A08, #FFB908);
+            height: 4px;
+            border: none;
+            border-radius: 500px;
+        }
+
+        h1{
+            padding-left: 10rem;
+        }
+
+        button{
+            padding: 0.75rem 2rem;
+            border-radius: 30px;
+            border: none;
+            font-size: 16px;
+            color: #FFFFFF;
+            background-color: #00BBFF;
+            margin-right: 10rem;
+            cursor: pointer
+        }
+        button:hover{
+            transition: 0.5s;
+            background-color: #0E46C9;
+        }
     }
 
-    section{
-        margin: 1rem;
-
+    #lista-vm{
+        margin-top: 1rem;
+        display: flex;
+        padding: 1rem 10rem 0 10rem;
+        // justify-content: center;
+        // align-items: center;
+        // width: 60rem;
 
         #listing-vm{
-            /* background-color: #FFFFFF; */
-            background-color: red;
-            /* padding: 1rem; */
+            background-color: #b5b5b5;
             width: 100%;
             align-items: center;
             align-content: center;
             text-align: center;
-            border: 2rem;
+            border-radius: 10px;
 
             tr{
                 width: 100%;
-                background-color: #00BBFF;
                 padding: 1rem;
+                background-color: #ffffff;
 
                 .title-table{
                     font-weight: 700;
                     font-size: 13px;
                     margin-bottom: 100px;
+                    padding: 0.5rem;
                 }
 
                 td{
+                    #buttons-action{
+                        display: flex;
+                        background-color: red;
+                    }
                     button{
+                        // margin: 0 5rem;
                         padding: 0.25rem 0.5rem;
                         border-radius: 10px;
                         border: none;
                         font-size: 13px;
                         color: #000000;
-                        background-color: #c7c7c7;
+                        // background-color: #c7c7c7;
+                        background: none;
+                        cursor: pointer;
+                        margin: 1rem 0 0.5rem 0;
+                        font-weight: 500;
                     }
+
+                    button:hover{
+                        background-color: #FF8A08;
+                        transition: 0.5s;
+                    }
+                    
                 }
             }
         }
