@@ -2,18 +2,43 @@
     <body class="main">
       <div class="content">
         <h1>Login</h1>
-        <form>
+        <form (ngSubmit)="submit()" [formGroup]="loginForm" #formDir="ngForm">
           <fieldset>
             <label>Email</label>
-            <input class="input-login" type="e-mail" name="" placeholder="E-mail">
+            <input 
+              requerid
+              class="input-login"
+              type="e-mail" 
+              name="" 
+              placeholder="E-mail"
+              formControlName="campoEmail">
+            <div *ngIf="campoEmail.invalid && formDir.submitted">
+              <p *ngIf="campoEmail.errors?.['required']">O Email é obrigatório para realização do Login!</p>
+              <!-- <p *ngIf="campoEmail.errors?.['required']">O Email não está no formato correto!</p> -->
+            </div>
           </fieldset>
           <fieldset>
             <label>Senha</label>
-            <input class="input-login" type="password" name="" placeholder="Senha">
+            <input 
+              requerid 
+              class="input-login" 
+              type="password" 
+              name="" 
+              placeholder="Senha"
+              formControlName="campoSenha">
+            <div *ngIf="campoSenha.invalid && formDir.submitted">
+              <p class="" *ngIf="campoSenha.errors?.['required']">A senha é obrigatório para realização do Login!</p>
+            </div>
           </fieldset>
-          <button 
+          <!-- <button 
             class="button-login" type="submit" onsubmit=""
             [routerLink]="['/home']"
+            >Entrar</button> -->
+            <button 
+              class="button-login"
+              type="submit" 
+              value="{{dataLogin}}"
+              *ngIf=""
             >Entrar</button>
         </form>
       </div>
