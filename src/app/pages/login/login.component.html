@@ -13,12 +13,13 @@
               requerid
               class="input-login"
               type="e-mail" 
-              name="" 
-              placeholder="E-mail"
-              formControlName="campoEmail">
+              name="email" 
+              placeholder="xxxxxx@gmail.com"
+              formControlName="campoEmail"
+              pattern="^\w+([\.+-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$"
+              [(ngModel)]="userData.email">
             <div *ngIf="campoEmail.invalid && formDir.submitted">
-              <p *ngIf="campoEmail.errors?.['required']">O Email é obrigatório para realização do Login!</p>
-              <!-- <p *ngIf="campoEmail.errors?.['required']">O Email não está no formato correto!</p> -->
+              <span *ngIf="campoEmail.errors?.['required']">O Email é obrigatório para realização do Login!</span>
             </div>
           </fieldset>
           <fieldset>
@@ -27,23 +28,18 @@
               requerid 
               class="input-login" 
               type="password" 
-              name="" 
-              placeholder="Senha"
-              formControlName="campoSenha">
+              name="senha" 
+              formControlName="campoSenha"
+              [(ngModel)]="userData.senha">
             <div *ngIf="campoSenha.invalid && formDir.submitted">
-              <p class="" *ngIf="campoSenha.errors?.['required']">A senha é obrigatório para realização do Login!</p>
+              <span class="" *ngIf="campoSenha.errors?.['required']">A senha é obrigatório para realização do Login!</span>
             </div>
           </fieldset>
           <button 
-            class="button-login" type="submit" onsubmit=""
-            [routerLink]="['/home']"
+            class="button-login"
+            type="submit"
+            onsubmit=""
             >Entrar</button>
-            <!-- <button 
-              class="button-login"
-              type="submit" 
-              value="{{dataLogin}}"
-              *ngIf=""
-            >Entrar</button> -->
         </form>
       </div>
     </body>

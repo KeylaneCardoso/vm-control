@@ -1,33 +1,36 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { RouterModule, Router } from '@angular/router';
 import { LocalStorageService } from '../../services/local-storage.service';
-import { FormGroup, FormControl, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
-import { CommonModule } from '@angular/common';
+import { FormGroup, FormControl, FormsModule, ReactiveFormsModule, Validators, NgForm } from '@angular/forms';
+import { CommonModule, JsonPipe } from '@angular/common';
+import { EmailValidator } from '@angular/forms';
 
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [RouterModule, FormsModule, ReactiveFormsModule, CommonModule],
+  imports: [RouterModule, FormsModule, ReactiveFormsModule, CommonModule, JsonPipe],
   templateUrl: './login.component.html',
   styleUrl: './login.component.scss'
 })
 export class LoginComponent implements OnInit {
-  @Input() dataLogin!: string;
-  userData: any;
+  @Input('loginForm') dataLogin!: string;
+  
+  userData: any = {
+    email: '',
+    senha: ''
+  }
 
-  loginForm! : FormGroup;
+  loginForm! : FormGroup ;
 
   
 
-  constructor(private localStorageService: LocalStorageService) { }
+
+  constructor(private localStorageService: LocalStorageService, private router: Router) { }
 
   ngOnInit(): void {
-    this.userData = this.localStorageService.getItem('username');
-    console.log(this.userData);
-
     this.loginForm = new FormGroup({
-      campoEmail: new FormControl('', Validators.required),
-      campoSenha: new FormControl('', Validators.required),
+      campoEmail: new FormControl('', [Validators.required, Validators.email]),
+      campoSenha: new FormControl('', [Validators.required]),
     });
   }
 
@@ -44,6 +47,12 @@ export class LoginComponent implements OnInit {
       return;
     }
 
-    console.log("enviou");
+    const userDataString = JSON.stringify(this.userData);
+    this.localStorageService.setItem('userData', userDataString);
+
+    this.router.navigate(['/home']);
+    // console.log("Dados salvos no Local Storage!");
+    // console.log(localStorage.getItem('userdata'));
+    // console.log("enviou");
   }
 }
