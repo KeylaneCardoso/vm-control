@@ -4,16 +4,22 @@ import { CommonModule } from '@angular/common';
 import { HeaderComponent } from '../../components/header/header.component';
 import { Chart, registerables } from 'chart.js';
 import { InfoDashboardComponent } from '../../components/info-dashboard/info-dashboard.component';
+import { LocalStorageService } from '../../services/local-storage.service';
 
 @Component({
   selector: 'app-dashboard',
   standalone: true,
-  imports: [CommonModule, RouterOutlet, HeaderComponent, InfoDashboardComponent],
+  imports: [ CommonModule, RouterOutlet, HeaderComponent, InfoDashboardComponent],
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.scss'
 })
 export class DashboardComponent implements OnInit {
-  userName = "Keylane";
+  
+  constructor(private localStorageService: LocalStorageService) { }
+
+  // this.localStorageService.getItem("userData");
+
+  userName = this.BuscarDados();
   numVM = "3";
   VMPercent = "24";
 
@@ -68,5 +74,18 @@ export class DashboardComponent implements OnInit {
       },  
     })
 
+  }
+
+  BuscarDados(): string{
+    const userDataString = this.localStorageService.getItem('userData');
+    if (userDataString === null || userDataString === undefined) {
+      console.error('Dados do usuário não encontrados no localStorage');
+      return 'error';
+    }
+    const userData = JSON.parse(userDataString);
+    const userName = userData.name;
+    console.log(userName)
+
+    return userName;
   }
 }
