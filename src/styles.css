@@ -5,7 +5,7 @@
     padding: 0;
 }
 
-h1, h2, h3, h4, h5, p, button, table, a, label, input, select{
+h1, h2, h3, h4, h5, p, button, table, a, label, input, select, span{
     font-family: "Montserrat", sans-serif;
 }
 

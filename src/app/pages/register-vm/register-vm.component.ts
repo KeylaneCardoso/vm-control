@@ -52,7 +52,9 @@ export class RegisterVmComponent implements OnInit {
       return;
     }
 
+
     this.router.navigate(['/visualizarVM']);
+    alert("A Maquina Virtual foi cadastrada com sucesso!")
   }
 
   reset(){

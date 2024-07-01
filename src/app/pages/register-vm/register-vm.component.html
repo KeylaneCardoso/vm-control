@@ -16,6 +16,9 @@
                         placeholder="mv"
                         formControlName="campoDisplayName"
                         [(ngModel)]="vmData.displayName">
+                    <div *ngIf="campoDisplayName.invalid && formDir.submitted">
+                        <span *ngIf="campoDisplayName.errors?.['required']">É obrigatório inserir um nome.</span>
+                    </div>
                 </fieldset>
                 <fieldset>
                     <label for="cpu-select">CPU</label>
@@ -31,6 +34,9 @@
                         <option value="5">5</option>
                         <option value="6">6</option>
                     </select>
+                    <div *ngIf="campoCPU.invalid && formDir.submitted">
+                        <span *ngIf="campoCPU.errors?.['required']">É obrigatório escolher uma cpu.</span>
+                    </div>
                 </fieldset>
                 <fieldset>
                     <label id="memoria" for="memoria-select">Memória (RAM)</label>
@@ -43,6 +49,9 @@
                         <option value="1024">1024</option>
                         <option value="2048">2048</option>
                     </select>
+                    <div *ngIf="campoMemory.invalid && formDir.submitted">
+                        <span *ngIf="campoMemory.errors?.['required']">É obrigatório escolher um tamanho de memória.</span>
+                    </div>
                 </fieldset>
                 <fieldset id="buttons-form-register">
                     <button
