@@ -1,16 +1,20 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { HeaderComponent } from '../../components/header/header.component';
-import { RouterLink } from '@angular/router';
+import { RouterLink, Router } from '@angular/router';
+import { AlertComponent } from '../../components/alert/alert.component';
 
 @Component({
   selector: 'app-listing-vm',
   standalone: true,
-  imports: [CommonModule, HeaderComponent, RouterLink],
+  imports: [AlertComponent,CommonModule, HeaderComponent, RouterLink],
   templateUrl: './listing-vm.component.html',
   styleUrl: './listing-vm.component.scss'
 })
 export class ListingVmComponent {
+
+  constructor(private router: Router) {}
+
   vm1Status = "RUNNING";
   vm2Status = "PAUSED";
   vm3Status = "STOP";
@@ -27,6 +31,7 @@ export class ListingVmComponent {
       case "Iniciar":
         if (this.vms[vmIndex].status === "RUNNING"){
           alert("A VM já está em execução!")
+          // this.router.navigate(['/teste'], { queryParams: { message: `VM ${this.vms[vmIndex].displayName} já está em execução!`, type: 'error' } });
           return;
         }
         this.vms[vmIndex].status = 'RUNNING';
