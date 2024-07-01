@@ -16,8 +16,9 @@ export class LoginComponent implements OnInit {
   @Input('loginForm') dataLogin!: string;
   
   userData: any = {
-    email: '',
-    senha: ''
+    email: 'keylane@gmail.com',
+    senha: '123456',
+    name: 'Keylane'
   }
 
   loginForm! : FormGroup ;
@@ -49,6 +50,8 @@ export class LoginComponent implements OnInit {
 
     const userDataString = JSON.stringify(this.userData);
     this.localStorageService.setItem('userData', userDataString);
+        // console.log(localStorage.getItem('userData'));
+
 
     this.router.navigate(['/home']);
     // console.log("Dados salvos no Local Storage!");

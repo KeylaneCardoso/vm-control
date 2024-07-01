@@ -10,7 +10,7 @@
           <fieldset>
             <label>Email</label>
             <input 
-              requerid
+              required
               class="input-login"
               type="e-mail" 
               name="email" 
@@ -20,12 +20,13 @@
               [(ngModel)]="userData.email">
             <div *ngIf="campoEmail.invalid && formDir.submitted">
               <span *ngIf="campoEmail.errors?.['required']">O Email é obrigatório para realização do Login!</span>
+              <span *ngIf="campoEmail.errors?.['pattern']">Digite um endereço de Email válido.</span>
             </div>
           </fieldset>
           <fieldset>
             <label>Senha</label>
             <input 
-              requerid 
+              required 
               class="input-login" 
               type="password" 
               name="senha" 
