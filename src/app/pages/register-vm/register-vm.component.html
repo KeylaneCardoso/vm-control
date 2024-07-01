@@ -12,6 +12,7 @@
                     <input class="input-login"
                         type="text"
                         name=""
+                        required
                         placeholder="mv"
                         formControlName="campoDisplayName"
                         [(ngModel)]="vmData.displayName">
@@ -20,7 +21,7 @@
                     <label for="cpu-select">CPU</label>
                     <select id="cpu-select" 
                         required
-                        formControlName="campoCpu"
+                        formControlName="campoCPU"
                         [(ngModel)]="vmData.cpu">
                         <option selected disabled value="">Selecione</option>
                         <option value="1">1</option>
