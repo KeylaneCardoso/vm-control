@@ -23,6 +23,13 @@ O projeto foi desenvolvido com o Angular 17, sendo gerado com o Angular CLI na v
 
 
 
+## Design da Plataforma
+
+As cores da plataforma foram baseadas na cores usadas na logo da Ustore, como maneira de reforçar a indentidade visual da empresa. O desing foi pensando na experiência do usuario, deixando os dados principais em destaque e disponibilizando um header para que ele pudesse navegar tranquilamente pela página. Todo o planejamento do desing foi feito a partir de uma prototipação no figma.
+Link Figma: (https://www.figma.com/design/YWB3LuRb4l26bDeFYwPr01/Projeto-Ustore?node-id=0-1&t=3mnnZkXPJx9QRnZp-1)
+
+
+
 ## Intalação e Uso
 
 Para executar o projeto localmente, siga as etapas:
@@ -30,6 +37,21 @@ Para executar o projeto localmente, siga as etapas:
 1. Clone o repositório: `https://github.com/KeylaneCardoso/vm-control.git`
 2. Execute o servidor: `ng server`
 3. Acesse a plataforma no seu navegador: `http://localhost:4200/`.
+
+
+
+
+## Implementações Incompletas
+
+- Validações dos formulários (feito apenas de maneira parcial);
+- Salvamento dos dados no localStorage (feito de maneira parcial);
+- Criação de um componente de alerta porém sem sucesso para implementar;
+
+
+
+## Tópicos em Falta
+
+- gitignore;
 
 
 
