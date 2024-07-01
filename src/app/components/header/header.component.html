@@ -8,10 +8,16 @@
         </button>
     </div>
     <hr>
-    <div id="links">
-        <a id="teste" [routerLink]="['/home']">Home</a>
-        <a [routerLink]="['/visualizarVM']">Minhas VM's</a>
-        <a [routerLink]="['/cadastrarVM']">Criar VM</a>
-        <p>Olá, {{userName}}</p>
+    <div id="block-links">
+        <div id="links">
+            <a [routerLink]="['/home']">Home</a>
+            <a [routerLink]="['/visualizarVM']">Minhas VM's</a>
+            <a [routerLink]="['/cadastrarVM']">Criar VM</a>
+            <button (click)="expand()">Olá, {{userName}}</button>
+        </div>
+        <div id="logout" *ngIf="isOpen">
+            <button (click)="logout()">Sair</button>
+            <p>.</p>
+        </div>
     </div> 
 </header>

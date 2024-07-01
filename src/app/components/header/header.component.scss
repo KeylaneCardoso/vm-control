@@ -36,60 +36,99 @@ header{
         }
     }
 
-    #links{
+    #block-links{
         background-color: #000000;
-        color: #ffffff;
-        display: flex;
-        justify-content: flex-end;
-        align-items: end;
-        gap: 2rem;
-        padding: 0.75rem 1.5rem;
 
-        a, p{
+        button{
+            background: none;
+            border: none;
             color: #ffffff;
-            text-decoration: none;
-            position: relative;
-            display: inline-block;
-            cursor: pointer;
+        }
+
+        #links{
+            background-color: #000000;
+            color: #ffffff;
+            display: flex;
+            justify-content: flex-end;
+            align-items: end;
+            gap: 2rem;
+            padding: 0.75rem 1.5rem;
+    
+            
+    
+            a, button{
+                color: #ffffff;
+                text-decoration: none;
+                position: relative;
+                display: inline-block;
+                cursor: pointer;
+                font-size: 14px;
+            }
+            
+            a::after {
+                content: '';
+                position: absolute;
+                width: 0;
+                height: 3px;
+                display: block;
+                background: #FF8A08;
+                transition: width 0.3s ease-in-out;
+                bottom: -1px;
+                left: 0;
+            }
+            button::after {
+                content: '';
+                position: absolute;
+                width: 0;
+                height: 3px;
+                display: block;
+                background: #FF8A08;
+                transition: width 0.3s ease-in-out;
+                bottom: -1px;
+                left: 0;
+            }
+            
+            a:hover::after {
+                width: 100%;
+            }
+            button:hover::after {
+                width: 100%;
+            }
         }
         
-        a::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 3px;
-            display: block;
-            background: #FF8A08;
-            transition: width 0.3s ease-in-out;
-            bottom: -1px;
-            left: 0;
-        }
-        p::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 3px;
-            display: block;
-            background: #FF8A08;
-            transition: width 0.3s ease-in-out;
-            bottom: -1px;
-            left: 0;
+        #logout{
+            display: flex;
+            justify-content: flex-end;
+            align-items: end;
+
+            button{
+                display: flex;
+                align-items: end;
+                justify-content: flex-end;
+                align-self: flex-end;
+                align-items: end;
+                width: 100%;
+                margin: 0 1.1rem 1rem 0;
+            }
+
+            button:hover{
+                color:#FF8A08;
+                text-transform: uppercase;
+                font-weight: 700;
+                transition: 0.75s;
+            }
         }
         
-        a:hover::after {
-            width: 100%;
-        }
-        p:hover::after {
-            width: 100%;
-        }
+
+
     }
 
     hr{
-        height: 0.5rem;
-        width: 100%;
-        background: linear-gradient(to right, #0E46C9 , #FF8A08);
-        border:none;
-    }
+            height: 0.5rem;
+            width: 100%;
+            background: linear-gradient(to right, #0E46C9 , #FF8A08);
+            border:none;
+        }
 }
 
 @media screen and (max-width: 1920px) and (min-width: 1280px){
